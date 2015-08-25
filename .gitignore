@@ -1,0 +1,7 @@
+# work files
+*.espressostorage
+*.esproj
+
+# folders
+/demo
+/landing-page
