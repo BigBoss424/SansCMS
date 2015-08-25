@@ -1,0 +1,30 @@
+RewriteEngine On
+
+# prevent directory listing
+Options -Indexes
+
+# set default index-page
+DirectoryIndex index.php home.php about.php index.html maintenance.html
+
+# IF the request filename with .php extension is a file which exists
+RewriteCond %{REQUEST_FILENAME}.php -f
+# AND the request is not for a directory
+RewriteCond %{REQUEST_URI} !/$
+# redirect to the php script with the requested filename
+RewriteRule (.*) $1\.php [L]
+
+# rewrite post to parameter
+RewriteRule ^(.*)/([0-9]+-.*)$ $1/single?post=$2 [L]
+# rewrite search to index
+RewriteRule ^(.*)/search$ $1/index [L]
+
+# Custom error documents
+ErrorDocument 400 /400
+ErrorDocument 403 /403
+ErrorDocument 404 /404
+ErrorDocument 500 /500
+ErrorDocument 502 /502
+ErrorDocument 504 /504
+ErrorDocument 509 /509
+
+RewriteRule ^(400|403|404|500|502|504|509)$ /config?error=$1 [L]
