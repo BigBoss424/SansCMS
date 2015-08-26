@@ -66,7 +66,7 @@
 	dribbble(array(parameters))
 	
 	REQUIRED PARAMETERS:
-	1. "token" = the dribbble api requires an access token, get yours at http://developer.dribbble.com
+	1. "token" = the dribbble api requires an access token, get yours at https://api.dribbble.com
 	
 	POSSIBLE PARAMETERS:
 	1. "count" = the amount of shots to display, defaults to 10, maximum is 50
